@@ -2,6 +2,10 @@ application:
   symbols:
     -
       name: EURUSD
-      strategy: Standard
+      strategyName: Standard
+      parameters:
+        timeframe: 1m
+    - name: USDJPY
+      strategyName: StandardStrategy
       parameters:
         timeframe: 1m
