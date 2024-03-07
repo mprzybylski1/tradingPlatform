@@ -1,0 +1,7 @@
+application:
+  symbols:
+    -
+      name: EURUSD
+      strategy: Standard
+      parameters:
+        timeframe: 1m
