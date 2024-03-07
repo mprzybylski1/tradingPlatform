@@ -5,6 +5,8 @@ import org.example.strategy.StrategyFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 @Component
 public class StrategyExecutor {
 
@@ -14,10 +16,17 @@ public class StrategyExecutor {
     @Autowired
     private StrategyFactory strategyFactory;
 
-    public void execute() {
+    public int start() {
+        final AtomicInteger strategyCount = new AtomicInteger();
+
         symbols.getSymbols().stream()
-            .map(symbol -> strategyFactory.createStrategy(symbol))
+            .map(symbol -> {
+                strategyCount.incrementAndGet();
+                return strategyFactory.createStrategy(symbol);
+            })
             .forEach(Runnable::run);
+
+        return strategyCount.get();
     }
 
 }

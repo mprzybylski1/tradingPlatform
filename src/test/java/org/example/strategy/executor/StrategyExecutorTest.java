@@ -1,8 +1,11 @@
 package org.example.strategy.executor;
 
+import org.example.config.Symbols;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 public class StrategyExecutorTest {
@@ -10,8 +13,11 @@ public class StrategyExecutorTest {
     @Autowired
     private StrategyExecutor strategyExecutor;
 
+    @Autowired
+    private Symbols symbols;
+
     @Test
-    void name() {
-        strategyExecutor.execute();
+    void givenDefinedSymbolsInConfiguration_whenStrategyExecutorStarts_thenStrategyShouldBeCreatedForEachSymbol() {
+        assertThat(strategyExecutor.start()).isEqualTo(symbols.getSymbols().size());
     }
 }
