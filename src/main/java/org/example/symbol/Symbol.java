@@ -12,6 +12,6 @@ import java.util.Map;
 public class Symbol {
 
     private String name;
-    private String strategy;
+    private String strategyName;
     private Map<String, String> parameters;
 }

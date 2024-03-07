@@ -25,7 +25,7 @@ class SymbolsTest {
         assertThat(symbols.getSymbols()).isNotEmpty();
         assertThat(symbols.getSymbols().get(0)).isNotNull();
         assertThat(symbols.getSymbols().get(0)).hasFieldOrPropertyWithValue("name", "EURUSD");
-        assertThat(symbols.getSymbols().get(0)).hasFieldOrPropertyWithValue("strategy", "Standard");
+        assertThat(symbols.getSymbols().get(0)).hasFieldOrPropertyWithValue("strategyName", "StandardStrategy");
         assertThat(symbols.getSymbols().get(0).getParameters()).isNotEmpty();
         assertThat(symbols.getSymbols().get(0).getParameters().get("timeframe")).isEqualTo("1m");
     }
