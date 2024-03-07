@@ -16,6 +16,10 @@ public class StrategyExecutor {
     @Autowired
     private StrategyFactory strategyFactory;
 
+    //TODO add data poller to get the data from the exchange
+    //TODO add a method to stop the strategies and close the positions
+    //TODO add database to store the positions and the strategies and the data
+
     public int start() {
         final AtomicInteger strategyCount = new AtomicInteger();
 
