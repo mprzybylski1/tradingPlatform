@@ -1,8 +1,10 @@
 application:
+  mode: BACK_TEST
+  pollingType: FILE
   symbols:
     -
       name: EURUSD
-      strategyName: Standard
+      strategyName: StandardStrategy
       parameters:
         timeframe: 1m
     - name: USDJPY

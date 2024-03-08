@@ -1,4 +1,5 @@
 application:
+  mode: LIVE
   symbols:
     -
       name: EURUSD
