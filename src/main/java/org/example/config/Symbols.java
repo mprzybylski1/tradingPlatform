@@ -1,7 +1,7 @@
 package org.example.config;
 
 import lombok.Data;
-import org.example.symbol.Symbol;
+import org.example.valueobject.Symbol;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 

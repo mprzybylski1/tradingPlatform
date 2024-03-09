@@ -1,4 +1,4 @@
-package org.example.symbol;
+package org.example.valueobject;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

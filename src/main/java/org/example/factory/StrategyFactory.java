@@ -1,8 +1,9 @@
 package org.example.factory;
 
 import lombok.extern.log4j.Log4j2;
+import org.example.poller.DataPoller;
 import org.example.strategy.Strategy;
-import org.example.symbol.Symbol;
+import org.example.valueobject.Symbol;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
@@ -11,18 +12,15 @@ import org.springframework.stereotype.Component;
 public class StrategyFactory {
 
     private final ApplicationContext applicationContext;
-    private final DataPollerFactory dataPollerFactory;
 
-    public StrategyFactory(final ApplicationContext applicationContext, final DataPollerFactory dataPollerFactory) {
+    public StrategyFactory(final ApplicationContext applicationContext) {
         this.applicationContext = applicationContext;
-        this.dataPollerFactory = dataPollerFactory;
     }
 
     public Strategy createStrategy(final Symbol symbol) {
         log.info("Creating strategy for symbol: {}", symbol);
 
-        return (Strategy) applicationContext.getBean(symbol.getStrategyName(),
-                symbol,
-                dataPollerFactory.createDataPoller());
+        final String strategyName = symbol.getStrategyName();
+        return (Strategy) applicationContext.getBean(strategyName, symbol);
     }
 }
