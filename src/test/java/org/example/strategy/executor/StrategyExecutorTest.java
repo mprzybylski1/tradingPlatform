@@ -1,6 +1,7 @@
 package org.example.strategy.executor;
 
 import org.example.config.Symbols;
+import org.example.executor.StrategyExecutor;
 import org.example.factory.DataPollerFactory;
 import org.example.poller.DataPoller;
 import org.junit.jupiter.api.Test;

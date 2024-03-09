@@ -1,4 +1,4 @@
-package org.example.strategy.executor;
+package org.example.executor;
 
 import org.example.config.Symbols;
 import org.example.factory.StrategyFactory;
