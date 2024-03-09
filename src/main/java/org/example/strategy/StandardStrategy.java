@@ -2,6 +2,7 @@ package org.example.strategy;
 
 import lombok.extern.log4j.Log4j2;
 import org.example.poller.DataPoller;
+import org.example.valueobject.Candle;
 import org.example.valueobject.Symbol;
 
 @Log4j2
@@ -12,7 +13,7 @@ public class StandardStrategy extends BaseStrategy {
     }
 
     @Override
-    public void evaluate() {
+    public void evaluate(final Candle candle) {
         log.info("Evaluating strategy for symbol: {}", symbol.getName());
 
     }

@@ -29,7 +29,7 @@ public abstract class BaseStrategy implements Strategy {
         while (optionalCandle.isPresent()) {
             final Candle candle = optionalCandle.get();
             log.info("Received candle: {}", candle);
-            evaluate();
+            evaluate(candle);
 
             optionalCandle = dataPoller.poll();
         }

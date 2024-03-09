@@ -1,6 +1,6 @@
 package org.example.config;
 
-import lombok.Getter;
+import lombok.Data;
 import org.example.valueobject.Symbol;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @Component
 @ConfigurationProperties(prefix = "application")
-@Getter
+@Data
 public class Symbols {
 
     private List<Symbol> symbols;
