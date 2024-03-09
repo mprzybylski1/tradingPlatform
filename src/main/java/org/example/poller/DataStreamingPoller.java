@@ -2,7 +2,6 @@ package org.example.poller;
 
 import org.example.api.DataStreamingApi;
 import org.example.valueobject.Candle;
-import org.example.valueobject.Symbol;
 
 import java.util.Optional;
 
@@ -15,7 +14,7 @@ public class DataStreamingPoller implements DataPoller {
     }
 
     @Override
-    public Optional<Candle> poll(final Symbol symbol) {
+    public Optional<Candle> poll() {
         return dataStreamingApi.getNext();
     }
 

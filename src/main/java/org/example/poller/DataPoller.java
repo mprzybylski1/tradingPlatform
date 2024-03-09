@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface DataPoller {
 
-    Optional<Candle> poll(Symbol symbol);
+    Optional<Candle> poll();
 
     String getApiClass();
 }

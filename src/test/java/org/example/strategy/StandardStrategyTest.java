@@ -31,7 +31,7 @@ class StandardStrategyTest {
         final Optional<Candle> optionalCandle = Optional.of(mockCandle);
         final Optional<Candle> empty = Optional.empty();
 
-        when(mockDataPoller.poll(symbol)).thenReturn(optionalCandle,
+        when(mockDataPoller.poll()).thenReturn(optionalCandle,
                                                     optionalCandle,
                                                     optionalCandle,
                                                     empty);
@@ -39,6 +39,6 @@ class StandardStrategyTest {
         final StandardStrategy standardStrategy = new StandardStrategy(symbol, mockDataPoller);
         standardStrategy.run();
 
-        verify(mockDataPoller, times(4)).poll(symbol);
+        verify(mockDataPoller, times(4)).poll();
     }
 }

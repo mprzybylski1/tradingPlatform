@@ -25,13 +25,13 @@ public abstract class BaseStrategy implements Strategy {
     public void run() {
         log.info("Running strategy for symbol: {}", symbol.getName());
 
-        Optional<Candle> optionalCandle = dataPoller.poll(symbol);
+        Optional<Candle> optionalCandle = dataPoller.poll();
         while (optionalCandle.isPresent()) {
             final Candle candle = optionalCandle.get();
             log.info("Received candle: {}", candle);
             evaluate();
 
-            optionalCandle = dataPoller.poll(symbol);
+            optionalCandle = dataPoller.poll();
         }
 
         log.info("No more candles to process, exiting strategy for symbol: {}", symbol.getName());

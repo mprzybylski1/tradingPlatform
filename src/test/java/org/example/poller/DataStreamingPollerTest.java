@@ -21,13 +21,12 @@ public class DataStreamingPollerTest {
     @Test
     void whenPollMethodIsInvoked_thenCandleDataIsReturned() {
         final DataStreamingApi mockApi = mock(DataStreamingApi.class);
-        final Symbol mockSymbol = mock(Symbol.class);
         final Candle mockCandle = mock(Candle.class);
 
         when(mockApi.getNext()).thenReturn(Optional.of(mockCandle));
 
         final DataPoller dataPoller = new DataStreamingPoller(mockApi);
-        final Optional<Candle> optionalCandle = dataPoller.poll(mockSymbol);
+        final Optional<Candle> optionalCandle = dataPoller.poll();
 
         assertThat(optionalCandle).isPresent();
         verify(mockApi, times(1)).getNext();
