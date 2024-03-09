@@ -7,9 +7,11 @@ application:
       strategyName: StandardStrategy
       parameters:
         timeframe: 1m
+        historicDataSize: 200
         filepath: src/test/resources/test.csv
     - name: USDJPY
       strategyName: StandardStrategy
       parameters:
         timeframe: 1m
+        historicDataSize: 200
         filepath: src/test/resources/test.csv

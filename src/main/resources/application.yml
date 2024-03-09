@@ -6,7 +6,9 @@ application:
       strategyName: StandardStrategy
       parameters:
         timeframe: 1m
+        historicDataSize: 200
     - name: USDJPY
       strategyName: StandardStrategy
       parameters:
         timeframe: 1m
+        historicDataSize: 200
